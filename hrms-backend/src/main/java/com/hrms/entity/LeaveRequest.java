@@ -30,5 +30,3 @@ public class LeaveRequest {
     private LocalDateTime approvedDate;
     private String approvedBy;
 }
-enum LeaveType { PAID, SICK, UNPAID }
-enum LeaveStatus { PENDING, APPROVED, REJECTED }

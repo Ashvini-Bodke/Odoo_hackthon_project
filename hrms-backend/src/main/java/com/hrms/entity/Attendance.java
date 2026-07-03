@@ -28,4 +28,3 @@ public class Attendance {
     private Double totalHours;
     private String remarks;
 }
-enum AttendanceStatus { PRESENT, ABSENT, HALF_DAY, ON_LEAVE }

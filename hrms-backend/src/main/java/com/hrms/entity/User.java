@@ -1,5 +1,4 @@
 package com.hrms.entity;
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,11 +7,9 @@ import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
-
 @Entity
 @Table(name = "users")
 @Data
@@ -35,9 +32,13 @@ public class User implements UserDetails {
     private EmployeeProfile profile;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+    @Builder.Default
     private boolean enabled = true;
+    @Builder.Default
     private boolean accountNonExpired = true;
+    @Builder.Default
     private boolean accountNonLocked = true;
+    @Builder.Default
     private boolean credentialsNonExpired = true;
     @PrePersist
     protected void onCreate() { createdAt = LocalDateTime.now(); updatedAt = LocalDateTime.now(); }
@@ -58,4 +59,3 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() { return enabled; }
 }
-enum Role { HR, EMPLOYEE }
