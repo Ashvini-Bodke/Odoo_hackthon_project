@@ -9,7 +9,7 @@ import com.odoo.hrms.dto.SignUpRequest;
 import com.odoo.hrms.entity.User;
 import com.odoo.hrms.repository.UserRepository;
 import com.odoo.hrms.security.JwtUtil;
-
+import com.odoo.hrms.enums.Role;
 @Service
 public class AuthServiceImpl  implements AuthService{
     
